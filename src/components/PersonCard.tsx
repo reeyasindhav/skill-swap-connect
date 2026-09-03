@@ -35,14 +35,17 @@ export function PersonCard({ person }: { person: Person }) {
             <MapPin size={13} /> {person.location}
             <span>·</span>
             <Star size={13} className="fill-honey text-honey" />
-            <span className="font-semibold text-foreground">{person.rating}</span> ({person.reviewCount})
+            <span className="font-semibold text-foreground">{person.rating}</span> (
+            {person.reviewCount})
           </p>
         </div>
       </div>
 
       <div className="grid flex-1 grid-cols-2 gap-4 border-y border-border px-5 py-4">
         <div>
-          <p className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground">CAN TEACH</p>
+          <p className="mb-2 text-[11px] font-semibold tracking-[0.14em] text-muted-foreground">
+            CAN TEACH
+          </p>
           <div className="flex flex-wrap gap-1.5">
             {person.teaches.map((s) => (
               <SkillTag key={s} label={s} variant="teach" />

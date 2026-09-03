@@ -1,0 +1,19 @@
+# Normalize line endings so the repo is consistent on every platform.
+# Force LF in the working tree regardless of the OS or git `core.autocrlf`.
+* text=auto eol=lf
+
+# Keep generated route tree out of formatter/git noise; it is regenerated.
+src/routeTree.gen.ts export-ignore
+
+# Binary assets: never touch.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text eol=lf
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary

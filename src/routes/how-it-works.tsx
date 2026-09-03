@@ -43,7 +43,11 @@ const stages = [
     step: "02",
     title: "Tag matching finds the overlap",
     body: "Your match score rises when your teach list answers someone's learn list — and theirs answers yours. Two-way overlap always ranks highest.",
-    detail: ["Two-way overlap = highest score", "Location and availability weighted", "Filter by category any time"],
+    detail: [
+      "Two-way overlap = highest score",
+      "Location and availability weighted",
+      "Filter by category any time",
+    ],
   },
   {
     icon: Send,
@@ -78,8 +82,8 @@ function HowItWorks() {
             From stranger to swap in five steps.
           </h1>
           <p className="mt-5 text-lg text-muted-foreground">
-            No credits, no subscriptions, no lesson marketplace. Just a structured way to find someone whose
-            skills fit the shape of yours.
+            No credits, no subscriptions, no lesson marketplace. Just a structured way to find
+            someone whose skills fit the shape of yours.
           </p>
         </Reveal>
       </section>
@@ -121,9 +125,21 @@ function HowItWorks() {
             <h2 className="font-display text-3xl font-semibold">How a match score is built</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {[
-                { w: "60%", t: "Two-way tag overlap", d: "You teach what they want, they teach what you want." },
-                { w: "25%", t: "Availability fit", d: "Overlapping windows in your weekly schedule." },
-                { w: "15%", t: "Community signal", d: "Rating, completed swaps, and response rate." },
+                {
+                  w: "60%",
+                  t: "Two-way tag overlap",
+                  d: "You teach what they want, they teach what you want.",
+                },
+                {
+                  w: "25%",
+                  t: "Availability fit",
+                  d: "Overlapping windows in your weekly schedule.",
+                },
+                {
+                  w: "15%",
+                  t: "Community signal",
+                  d: "Rating, completed swaps, and response rate.",
+                },
               ].map((m) => (
                 <div key={m.t} className="rounded-2xl border border-forest-foreground/15 p-6">
                   <p className="font-display text-4xl font-semibold text-honey">{m.w}</p>
@@ -133,11 +149,16 @@ function HowItWorks() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-2">
-              {["Figma", "Sourdough baking", "React", "Watercolor", "Conversational French", "Ceramics"].map(
-                (s) => (
-                  <SkillTag key={s} label={s} variant="honey" />
-                ),
-              )}
+              {[
+                "Figma",
+                "Sourdough baking",
+                "React",
+                "Watercolor",
+                "Conversational French",
+                "Ceramics",
+              ].map((s) => (
+                <SkillTag key={s} label={s} variant="honey" />
+              ))}
             </div>
           </div>
         </Reveal>

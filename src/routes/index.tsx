@@ -20,7 +20,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "SkillSwap — Trade skills, grow together" },
       {
         property: "og:description",
-        content: "Teach what you know, learn what you need. No fees, no courses — just people trading skills.",
+        content:
+          "Teach what you know, learn what you need. No fees, no courses — just people trading skills.",
       },
     ],
   }),
@@ -68,8 +69,9 @@ function Landing() {
               <span className="text-primary">Grow together.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              Courses are expensive. Tutors are rigid. Your neighbour is neither. Meet generous people who can
-              teach what you want to learn — and are excited about what you already know.
+              Courses are expensive. Tutors are rigid. Your neighbour is neither. Meet generous
+              people who can teach what you want to learn — and are excited about what you already
+              know.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="rounded-full">
@@ -156,15 +158,18 @@ function Landing() {
             Learning shouldn't be locked behind a paywall.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            Bootcamps cost thousands. Tutoring is rigid and impersonal. Meanwhile there are people three
-            streets away who'd happily teach you sourdough, French, or React for an hour of your time — they
-            just have no reliable way to find you.
+            Bootcamps cost thousands. Tutoring is rigid and impersonal. Meanwhile there are people
+            three streets away who'd happily teach you sourdough, French, or React for an hour of
+            your time — they just have no reliable way to find you.
           </p>
         </Reveal>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {[
             { k: "The cost wall", v: "Paid courses price out the people most eager to learn." },
-            { k: "The coordination gap", v: "Peer learning is fragmented across group chats and forums." },
+            {
+              k: "The coordination gap",
+              v: "Peer learning is fragmented across group chats and forums.",
+            },
             { k: "The trust problem", v: "Without reviews, nobody knows who actually shows up." },
           ].map((c, i) => (
             <Reveal key={c.k} delay={i * 100}>
@@ -181,7 +186,9 @@ function Landing() {
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
-            <h2 className="font-display text-4xl font-semibold md:text-5xl">Four steps, zero dollars.</h2>
+            <h2 className="font-display text-4xl font-semibold md:text-5xl">
+              Four steps, zero dollars.
+            </h2>
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
@@ -210,8 +217,12 @@ function Landing() {
       <section className="mx-auto max-w-6xl px-5 py-24">
         <Reveal className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold tracking-[0.16em] text-primary">PEOPLE ON SKILLSWAP</p>
-            <h2 className="mt-3 font-display text-4xl font-semibold">Someone here knows the thing.</h2>
+            <p className="text-sm font-semibold tracking-[0.16em] text-primary">
+              PEOPLE ON SKILLSWAP
+            </p>
+            <h2 className="mt-3 font-display text-4xl font-semibold">
+              Someone here knows the thing.
+            </h2>
           </div>
           <Link to="/matches" className="underline-grow text-sm font-semibold text-primary">
             Browse everyone →
@@ -257,7 +268,11 @@ function Landing() {
                     <Stars rating={r.rating} />
                     <p className="mt-4 text-[15px]">“{r.body}”</p>
                     <div className="mt-5 flex items-center gap-3">
-                      <Monogram initials={author?.initials ?? "SS"} tone={author?.tone ?? "mint"} size="sm" />
+                      <Monogram
+                        initials={author?.initials ?? "SS"}
+                        tone={author?.tone ?? "mint"}
+                        size="sm"
+                      />
                       <div className="text-sm">
                         <p className="font-semibold">{author?.name}</p>
                         <p className="text-muted-foreground">on {r.skill}</p>

@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Heart } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +14,10 @@ export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
       { title: "Log in — SkillSwap" },
-      { name: "description", content: "Log back into SkillSwap to pick up your swaps, messages and matches." },
+      {
+        name: "description",
+        content: "Log back into SkillSwap to pick up your swaps, messages and matches.",
+      },
       { property: "og:title", content: "Log in — SkillSwap" },
       { property: "og:description", content: "Pick up your swaps, messages and matches." },
     ],
@@ -44,7 +47,7 @@ function LoginPage() {
         <div className="animate-fade-up w-full max-w-sm">
           <Link to="/" className="flex items-center gap-2.5">
             <span className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <Sparkles size={17} />
+              <Heart size={17} />
             </span>
             <span className="font-display text-xl font-semibold">skillswap</span>
           </Link>
@@ -106,9 +109,11 @@ function LoginPage() {
             <span className="text-sm text-forest-foreground/75">Priya N. · member since 2024</span>
           </div>
           <div className="mt-10 flex flex-wrap gap-2">
-            {["Figma", "Sourdough baking", "Piano", "Watercolor", "React", "Portuguese"].map((s) => (
-              <SkillTag key={s} label={s} variant="honey" />
-            ))}
+            {["Figma", "Sourdough baking", "Piano", "Watercolor", "React", "Portuguese"].map(
+              (s) => (
+                <SkillTag key={s} label={s} variant="honey" />
+              ),
+            )}
           </div>
         </div>
       </div>

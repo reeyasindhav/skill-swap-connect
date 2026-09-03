@@ -80,7 +80,9 @@ export function ProposeSwapDialog({ person, children }: { person: Person; childr
 
         {step === 0 && (
           <div className="animate-fade-up space-y-3">
-            <p className="text-sm font-semibold">Pick a skill {person.name.split(" ")[0]} can teach</p>
+            <p className="text-sm font-semibold">
+              Pick a skill {person.name.split(" ")[0]} can teach
+            </p>
             <div className="flex flex-wrap gap-2">
               {person.teaches.map((s) => (
                 <SkillTag
@@ -100,7 +102,12 @@ export function ProposeSwapDialog({ person, children }: { person: Person; childr
             <p className="text-sm font-semibold">Offer something back</p>
             <div className="flex flex-wrap gap-2">
               {currentUser.teaches.map((s) => (
-                <SkillTag key={s} label={s} active={youTeach === s} onClick={() => setYouTeach(s)} />
+                <SkillTag
+                  key={s}
+                  label={s}
+                  active={youTeach === s}
+                  onClick={() => setYouTeach(s)}
+                />
               ))}
             </div>
             <div className="mt-4 flex items-center justify-center gap-3 rounded-2xl bg-muted p-4 text-sm">
@@ -126,7 +133,9 @@ export function ProposeSwapDialog({ person, children }: { person: Person; childr
                 <Monogram initials={person.initials} tone={person.tone} size="sm" />
                 <div>
                   <p className="font-semibold">{person.name}</p>
-                  <p className="text-muted-foreground">Usually replies within a day · {person.availability}</p>
+                  <p className="text-muted-foreground">
+                    Usually replies within a day · {person.availability}
+                  </p>
                 </div>
               </div>
             </div>

@@ -180,7 +180,14 @@ export const people: Person[] = [
   },
 ];
 
-export const skillFilters = ["All skills", "Design", "Technology", "Creative", "Languages", "Lifestyle"] as const;
+export const skillFilters = [
+  "All skills",
+  "Design",
+  "Technology",
+  "Creative",
+  "Languages",
+  "Lifestyle",
+] as const;
 
 export type Swap = {
   id: string;
@@ -338,8 +345,16 @@ export const conversations: Conversation[] = [
     unread: 2,
     lastAt: "12 min ago",
     messages: [
-      { from: "them", text: "Feed your starter tonight and we'll shape tomorrow morning!", at: "9:02 AM" },
-      { from: "me", text: "Done — it doubled in five hours, which feels aggressive?", at: "9:20 AM" },
+      {
+        from: "them",
+        text: "Feed your starter tonight and we'll shape tomorrow morning!",
+        at: "9:02 AM",
+      },
+      {
+        from: "me",
+        text: "Done — it doubled in five hours, which feels aggressive?",
+        at: "9:20 AM",
+      },
       { from: "them", text: "That's a happy starter. Bring it to the call.", at: "9:24 AM" },
       { from: "them", text: "Also I read your editing notes. Ruthless. Loved it.", at: "9:25 AM" },
     ],
@@ -351,7 +366,11 @@ export const conversations: Conversation[] = [
     lastAt: "2 hours ago",
     messages: [
       { from: "me", text: "Thursday still good for our 30 minutes?", at: "7:40 AM" },
-      { from: "them", text: "Oui. Bring three questions about your garden — all in French.", at: "10:15 AM" },
+      {
+        from: "them",
+        text: "Oui. Bring three questions about your garden — all in French.",
+        at: "10:15 AM",
+      },
     ],
   },
   {
@@ -360,8 +379,16 @@ export const conversations: Conversation[] = [
     unread: 0,
     lastAt: "Yesterday",
     messages: [
-      { from: "me", text: "Sent over a swap proposal — Notion setup for watercolor basics.", at: "4:12 PM" },
-      { from: "them", text: "Looking at it tonight. Sounds like a fair trade to me.", at: "6:48 PM" },
+      {
+        from: "me",
+        text: "Sent over a swap proposal — Notion setup for watercolor basics.",
+        at: "4:12 PM",
+      },
+      {
+        from: "them",
+        text: "Looking at it tonight. Sounds like a fair trade to me.",
+        at: "6:48 PM",
+      },
     ],
   },
   {
@@ -370,18 +397,41 @@ export const conversations: Conversation[] = [
     unread: 0,
     lastAt: "Aug 14",
     messages: [
-      { from: "them", text: "Left you a review. Thanks again for the portfolio surgery.", at: "1:05 PM" },
+      {
+        from: "them",
+        text: "Left you a review. Thanks again for the portfolio surgery.",
+        at: "1:05 PM",
+      },
       { from: "me", text: "Any time. Ping me when the case study is live.", at: "1:31 PM" },
     ],
   },
 ];
 
-export const communityCircles = [
+export type CommunityCircle = {
+  id: string;
+  name: string;
+  members: number;
+  blurb: string;
+  tone: "mint" | "honey" | "forest";
+  tags: string[];
+};
+
+export type CommunityEvent = {
+  id: string;
+  title: string;
+  host: string;
+  date: string;
+  time: string;
+  seats: number;
+};
+
+export const communityCircles: CommunityCircle[] = [
   {
     id: "makers",
     name: "Weekend Makers",
     members: 1284,
-    blurb: "Ceramics, woodwork, printmaking — anyone who makes things with their hands on Saturdays.",
+    blurb:
+      "Ceramics, woodwork, printmaking — anyone who makes things with their hands on Saturdays.",
     tone: "mint" as const,
     tags: ["Ceramics", "Woodworking", "Printmaking"],
   },
@@ -411,11 +461,39 @@ export const communityCircles = [
   },
 ];
 
-export const communityEvents = [
-  { id: "ev-1", title: "Figma jam for non-designers", host: "Maya Chen", date: "Thu, Sep 4", time: "7:00 PM", seats: 8 },
-  { id: "ev-2", title: "Starter clinic: fixing sluggish dough", host: "Sofia Marino", date: "Sun, Sep 7", time: "10:00 AM", seats: 12 },
-  { id: "ev-3", title: "Speak-only-French hour", host: "Tomás Ferreira", date: "Tue, Sep 9", time: "6:30 PM", seats: 6 },
-  { id: "ev-4", title: "Watercolor: one wash, one hour", host: "Aisha Bello", date: "Sat, Sep 13", time: "2:00 PM", seats: 10 },
+export const communityEvents: CommunityEvent[] = [
+  {
+    id: "ev-1",
+    title: "Figma jam for non-designers",
+    host: "Maya Chen",
+    date: "Thu, Sep 4",
+    time: "7:00 PM",
+    seats: 8,
+  },
+  {
+    id: "ev-2",
+    title: "Starter clinic: fixing sluggish dough",
+    host: "Sofia Marino",
+    date: "Sun, Sep 7",
+    time: "10:00 AM",
+    seats: 12,
+  },
+  {
+    id: "ev-3",
+    title: "Speak-only-French hour",
+    host: "Tomás Ferreira",
+    date: "Tue, Sep 9",
+    time: "6:30 PM",
+    seats: 6,
+  },
+  {
+    id: "ev-4",
+    title: "Watercolor: one wash, one hour",
+    host: "Aisha Bello",
+    date: "Sat, Sep 13",
+    time: "2:00 PM",
+    seats: 10,
+  },
 ];
 
 export const platformStats = [
@@ -426,7 +504,11 @@ export const platformStats = [
 ];
 
 export const allSkills = Array.from(
-  new Set(people.flatMap((p) => [...p.teaches, ...p.learns]).concat(currentUser.teaches, currentUser.learns)),
+  new Set(
+    people
+      .flatMap((p) => [...p.teaches, ...p.learns])
+      .concat(currentUser.teaches, currentUser.learns),
+  ),
 ).sort();
 
 export function getPerson(id: string) {

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Menu, X } from "lucide-react";
+import { Heart, Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -17,13 +17,17 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center gap-6 px-5 py-4">
         <Link to="/" className="flex items-center gap-2.5">
           <span className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            <Sparkles size={17} />
+            <Heart size={17} />
           </span>
           <span className="font-display text-xl font-semibold">skillswap</span>
         </Link>
         <nav className="ml-auto hidden items-center gap-7 text-sm font-medium md:flex">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className="underline-grow text-muted-foreground hover:text-foreground">
+            <Link
+              key={l.to}
+              to={l.to}
+              className="underline-grow text-muted-foreground hover:text-foreground"
+            >
               {l.label}
             </Link>
           ))}
@@ -36,7 +40,11 @@ export function SiteHeader() {
             <Link to="/signup">Join free</Link>
           </Button>
         </div>
-        <button className="ml-auto md:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+        <button
+          className="ml-auto md:hidden"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
@@ -70,13 +78,13 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-2.5">
             <span className="flex size-9 items-center justify-center rounded-full bg-honey text-honey-foreground">
-              <Sparkles size={17} />
+              <Heart size={17} />
             </span>
             <span className="font-display text-xl font-semibold">skillswap</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-forest-foreground/75">
-            A community where knowledge is the currency. Teach what you know, learn what you need, pay
-            nothing.
+            A community where knowledge is the currency. Teach what you know, learn what you need,
+            pay nothing.
           </p>
         </div>
         <div className="text-sm">
@@ -105,27 +113,22 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="text-sm">
-          <p className="mb-3 font-semibold">Get started</p>
+          <p className="mb-3 font-semibold">Legal</p>
           <ul className="space-y-2 text-forest-foreground/75">
             <li>
-              <Link to="/signup" className="underline-grow">
-                Create an account
+              <Link to="/privacy" className="underline-grow">
+                Privacy Policy
               </Link>
             </li>
             <li>
-              <Link to="/login" className="underline-grow">
-                Log in
+              <Link to="/privacy" className="underline-grow">
+                Terms of Use
               </Link>
             </li>
             <li>
-              <Link to="/discover" className="underline-grow">
-                Your dashboard
-              </Link>
-            </li>
-            <li>
-              <Link to="/settings" className="underline-grow">
-                Settings
-              </Link>
+              <a href="mailto:privacy@skillswap.example" className="underline-grow">
+                Contact
+              </a>
             </li>
           </ul>
         </div>

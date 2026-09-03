@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function Reveal({
@@ -12,30 +12,18 @@ export function Reveal({
   className?: string;
   as?: "div" | "section" | "li" | "article" | "header";
 }) {
-  const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
 
+  // Reveal on mount rather than on scroll so pages are visible immediately
+  // after navigation instead of only appearing once scrolled into view.
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setShown(true);
-          io.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
+    setShown(true);
   }, []);
 
   const Comp = Tag as "div";
 
   return (
     <Comp
-      ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn("reveal", shown && "reveal-in", className)}
     >

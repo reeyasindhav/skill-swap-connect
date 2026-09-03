@@ -9,7 +9,7 @@ import {
   Bell,
   Menu,
   X,
-  Sparkles,
+  Heart,
 } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
@@ -57,7 +57,7 @@ export function AppShell({
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <span className="flex size-11 items-center justify-center rounded-full bg-honey text-honey-foreground">
-              <Sparkles size={20} />
+              <Heart size={20} />
             </span>
             <span className="font-display text-2xl font-semibold">skillswap</span>
           </Link>
@@ -85,7 +85,10 @@ export function AppShell({
                     : "text-sidebar-foreground/85 hover:bg-sidebar-accent/60 hover:translate-x-1",
                 )}
               >
-                <Icon size={19} className="transition-transform duration-300 group-hover:scale-110" />
+                <Icon
+                  size={19}
+                  className="transition-transform duration-300 group-hover:scale-110"
+                />
                 <span className="flex-1">{label}</span>
                 {badge ? (
                   <span className="flex size-5 items-center justify-center rounded-full bg-honey text-[11px] font-bold text-honey-foreground">

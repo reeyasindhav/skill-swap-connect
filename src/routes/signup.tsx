@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Heart, Check } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,10 +16,14 @@ export const Route = createFileRoute("/signup")({
       { title: "Join SkillSwap — free skill trading community" },
       {
         name: "description",
-        content: "Create a free SkillSwap profile in three steps: your details, what you teach, what you want to learn.",
+        content:
+          "Create a free SkillSwap profile in three steps: your details, what you teach, what you want to learn.",
       },
       { property: "og:title", content: "Join SkillSwap" },
-      { property: "og:description", content: "Three steps to your first skill swap. Free forever." },
+      {
+        property: "og:description",
+        content: "Three steps to your first skill swap. Free forever.",
+      },
     ],
   }),
   component: SignupPage,
@@ -50,7 +54,7 @@ function SignupPage() {
         <div className="pointer-events-none absolute -bottom-24 -left-20 size-96 rounded-full bg-honey/40 blur-3xl" />
         <Link to="/" className="relative flex items-center gap-2.5">
           <span className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-            <Sparkles size={17} />
+            <Heart size={17} />
           </span>
           <span className="font-display text-xl font-semibold">skillswap</span>
         </Link>
@@ -82,7 +86,10 @@ function SignupPage() {
             {labels.map((l, i) => (
               <div key={l} className="flex flex-1 flex-col gap-1.5">
                 <span
-                  className={cn("h-1.5 rounded-full transition-all duration-500", i <= step ? "bg-primary" : "bg-border")}
+                  className={cn(
+                    "h-1.5 rounded-full transition-all duration-500",
+                    i <= step ? "bg-primary" : "bg-border",
+                  )}
                 />
                 <span className="text-[11px] text-muted-foreground">{l}</span>
               </div>
@@ -116,7 +123,12 @@ function SignupPage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="pw">Password</Label>
-                <Input id="pw" type="password" placeholder="••••••••" className="h-12 rounded-2xl" />
+                <Input
+                  id="pw"
+                  type="password"
+                  placeholder="••••••••"
+                  className="h-12 rounded-2xl"
+                />
               </div>
             </div>
           )}
