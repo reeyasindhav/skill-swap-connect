@@ -126,9 +126,9 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <a href="mailto:privacy@skillswap.example" className="underline-grow">
+              <Link to="/contact" className="underline-grow">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
