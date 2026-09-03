@@ -121,7 +121,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/privacy" className="underline-grow">
+              <Link to="/terms" className="underline-grow">
                 Terms of Use
               </Link>
             </li>

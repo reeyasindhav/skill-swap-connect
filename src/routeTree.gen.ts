@@ -22,6 +22,7 @@ import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as SwapsRouteImport } from './routes/swaps'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PeoplePersonIdRouteImport } from './routes/people/$personId'
 
 const IndexRoute = IndexRouteImport.update({
@@ -89,6 +90,11 @@ const SwapsRoute = SwapsRouteImport.update({
   path: '/swaps',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PeoplePersonIdRoute = PeoplePersonIdRouteImport.update({
   id: '/people/$personId',
   path: '/people/$personId',
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/swaps': typeof SwapsRoute
+  '/terms': typeof TermsRoute
   '/people/$personId': typeof PeoplePersonIdRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/swaps': typeof SwapsRoute
+  '/terms': typeof TermsRoute
   '/people/$personId': typeof PeoplePersonIdRoute
 }
 export interface FileRoutesById {
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/swaps': typeof SwapsRoute
+  '/terms': typeof TermsRoute
   '/people/$personId': typeof PeoplePersonIdRoute
 }
 export interface FileRouteTypes {
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/signup'
     | '/swaps'
+    | '/terms'
     | '/people/$personId'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/signup'
     | '/swaps'
+    | '/terms'
     | '/people/$personId'
   id:
     | '__root__'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/signup'
     | '/swaps'
+    | '/terms'
     | '/people/$personId'
   fileRoutesById: FileRoutesById
 }
@@ -209,6 +221,7 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
   SwapsRoute: typeof SwapsRoute
+  TermsRoute: typeof TermsRoute
   PeoplePersonIdRoute: typeof PeoplePersonIdRoute
 }
 
@@ -305,6 +318,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SwapsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/people/$personId': {
       id: '/people/$personId'
       path: '/people/$personId'
@@ -329,6 +349,7 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
   SwapsRoute: SwapsRoute,
+  TermsRoute: TermsRoute,
   PeoplePersonIdRoute: PeoplePersonIdRoute,
 }
 export const routeTree = rootRouteImport
