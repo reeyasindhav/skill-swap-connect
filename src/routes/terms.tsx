@@ -26,7 +26,9 @@ function Terms() {
             <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Handshake size={20} />
             </span>
-            <h1 className="font-display text-4xl font-semibold md:text-5xl">Terms of Use</h1>
+            <h1 className="font-display text-4xl font-semibold md:text-5xl highlight-reveal">
+              Terms of Use
+            </h1>
           </div>
           <p className="mt-5 text-lg text-muted-foreground">
             Last updated September 2026. These terms exist to keep SkillSwap friendly, safe, and
@@ -37,10 +39,10 @@ function Terms() {
         <article className="mt-12 max-w-3xl space-y-10 text-sm text-muted-foreground">
           <Reveal delay={60}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
                 1. The short version
               </h2>
-              <p className="mt-3">
+              <p className="mt-3 text-reveal">
                 Be excellent to each other. SkillSwap is built on trust — if you flake, harass, or
                 scam someone, you lose access.
               </p>
@@ -49,8 +51,10 @@ function Terms() {
 
           <Reveal delay={120}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">2. Eligibility</h2>
-              <p className="mt-3">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
+                2. Eligibility
+              </h2>
+              <p className="mt-3 text-reveal">
                 SkillSwap is for people 16 and up. By using it, you confirm you're not barred from
                 online services under any applicable law.
               </p>
@@ -59,10 +63,10 @@ function Terms() {
 
           <Reveal delay={180}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
                 3. Accounts and conduct
               </h2>
-              <ul className="mt-3 list-disc space-y-2 pl-5">
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-reveal">
                 <li>
                   Keep your profile honest. Fake skills or false availability undermines trust.
                 </li>
@@ -74,8 +78,10 @@ function Terms() {
 
           <Reveal delay={240}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">4. Reviews</h2>
-              <p className="mt-3">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
+                4. Reviews
+              </h2>
+              <p className="mt-3 text-reveal">
                 Reviews must be based on actual swaps. Personal attacks or off-topic content will be
                 removed and may lead to account suspension.
               </p>
@@ -84,10 +90,10 @@ function Terms() {
 
           <Reveal delay={300}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
                 5. Intellectual property
               </h2>
-              <p className="mt-3">
+              <p className="mt-3 text-reveal">
                 You keep ownership of the skills and knowledge you share. By posting, you grant
                 SkillSwap a license to display it within the app so other users can see what you
                 offer.
@@ -97,8 +103,10 @@ function Terms() {
 
           <Reveal delay={360}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">6. Disclaimer</h2>
-              <p className="mt-3">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
+                6. Disclaimer
+              </h2>
+              <p className="mt-3 text-reveal">
                 SkillSwap is provided as-is, with no guarantees of uptime or specific matches. We
                 don't guarantee outcomes — that's up to the people involved.
               </p>
@@ -107,8 +115,10 @@ function Terms() {
 
           <Reveal delay={420}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">7. Changes</h2>
-              <p className="mt-3">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
+                7. Changes
+              </h2>
+              <p className="mt-3 text-reveal">
                 We may update these terms as the product evolves. We'll post the new version here
                 and note the updated date. Continued use means acceptance.
               </p>
@@ -117,8 +127,10 @@ function Terms() {
 
           <Reveal delay={480}>
             <section>
-              <h2 className="font-display text-xl font-semibold text-foreground">8. Contact</h2>
-              <p className="mt-3">
+              <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
+                8. Contact
+              </h2>
+              <p className="mt-3 text-reveal">
                 Questions? Reach us at{" "}
                 <a href="mailto:privacy@skillswap.example" className="underline-grow">
                   privacy@skillswap.example

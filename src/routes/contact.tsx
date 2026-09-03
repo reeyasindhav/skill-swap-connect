@@ -26,7 +26,9 @@ function Contact() {
             <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Mail size={20} />
             </span>
-            <h1 className="font-display text-4xl font-semibold md:text-5xl">Contact</h1>
+            <h1 className="font-display text-4xl font-semibold md:text-5xl highlight-reveal">
+              Contact
+            </h1>
           </div>
           <p className="mt-5 text-lg text-muted-foreground">
             We read every message. If you have a question, a bug report, or just want to say hi,
@@ -41,13 +43,13 @@ function Contact() {
                 <Mail size={18} />
               </span>
               <div>
-                <p className="text-sm font-medium text-foreground">Email</p>
+                <p className="text-sm font-medium text-foreground highlight-reveal">Email</p>
                 <a href="mailto:privacy@skillswap.example" className="text-sm underline-grow">
                   privacy@skillswap.example
                 </a>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-reveal">
               Best for detailed questions, partnership ideas, or data requests. We usually reply
               within 2 business days.
             </p>
@@ -59,13 +61,13 @@ function Contact() {
                 <MessageSquare size={18} />
               </span>
               <div>
-                <p className="text-sm font-medium text-foreground">In-app</p>
+                <p className="text-sm font-medium text-foreground highlight-reveal">In-app</p>
                 <p className="text-sm text-muted-foreground">
                   Use the messages tab after you sign up.
                 </p>
               </div>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-reveal">
               Already have an account? Message us directly from the app for faster support about
               swaps, reviews, or account issues.
             </p>
@@ -76,14 +78,16 @@ function Contact() {
           delay={180}
           className="mt-12 max-w-3xl rounded-2xl border border-border/70 bg-card p-8"
         >
-          <h2 className="font-display text-xl font-semibold text-foreground">Common topics</h2>
-          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+          <h2 className="font-display text-xl font-semibold text-foreground highlight-reveal">
+            Common topics
+          </h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground text-reveal">
             <li>Account deletion or data export requests</li>
             <li>Abuse, harassment, or safety reports</li>
             <li>Feature requests and bug reports</li>
             <li>Press, partnerships, or speaking inquiries</li>
           </ul>
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p className="mt-6 text-sm text-muted-foreground text-reveal">
             For anything urgent, put <span className="font-medium text-foreground">URGENT</span> at
             the start of the subject line so we can prioritize it.
           </p>
